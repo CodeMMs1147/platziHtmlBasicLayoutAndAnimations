@@ -11,9 +11,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
 
     :root {
-      --yellow: #ffd602;
-      --red: #d5040d;
-      --blue: #036cb6;
+      --primary-color: #ffd602;
+      --secondary-color: #d5040d;
+      --tertiary-color: #036cb6;
     }
 
     body {
@@ -32,7 +32,7 @@
       z-index: 1;
       display: grid;
       grid-template-columns: 55% 45%;
-      grid-template-rows: 20%, 50, 30%;
+      grid-template-rows: 20% 50% 30%;
       grid-template-areas: "nav aside" "section aside" "footer aside";
       height: 100%;
       width: 100%;
@@ -41,6 +41,32 @@
     .navbar {
       background: lightsalmon;
       grid-area: nav;
+      display: flex;
+    }
+
+    .navbar__content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 0 0 80px;
+    }
+
+    .navbar__content img {
+      width: 50px;
+    }
+
+    .navbar__content ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      padding: 0;
+      width: 450px;
+    }
+
+    .navbar__content ul li a {
+      color: var(--secondary-color);
+      font-weight: 300;
+      text-decoration: none;
     }
 
     .loader {
@@ -53,7 +79,7 @@
       position: absolute;
       z-index: 3;
 
-      animation: loader 2s linear forwards;
+      animation: loader 0.4s linear forwards;
     }
 
     @keyframes loader {
@@ -89,12 +115,15 @@
     .loader div:nth-child(1) {
       animation-delay: 0.2s;
     }
+
     .loader div:nth-child(2) {
       animation-delay: 0.4s;
     }
+
     .loader div:nth-child(3) {
       animation-delay: 0.6s;
     }
+
     @keyframes scaling {
       0%, 100% {
         transform: scale(0.2);
@@ -106,6 +135,7 @@
         transform: scale(1);
       }
     }
+
   </style>
 </head>
 <body>
@@ -114,7 +144,7 @@
     <section class="container">
       <nav class="navbar">
         <div class="navbar__content">
-          <img src="" alt="">
+          <img src="https://i.ibb.co/MMmDPXN/lego.png" alt="logo">
           <ul>
             <li><a href="/">EXCLUSIVOS</a></li>
             <li><a href="/">NUEVOS</a></li>
